@@ -1,0 +1,43 @@
+List the components of hadoop2.X and explain each component in detail.
+
+The major components of hadoop 2.x are
+1.HDFS
+2.MapReduce
+3.YARN
+
+*All the master and slave nodes contains both the MapReduce and HDFS components.
+*Each master nodes has two components namely  
+                                           1.Resource Manager or MapReduce v2
+                                           2.HDFS
+*HDFS consists of core component called as NameNode which is used to store the metadata.
+*In version 2, some of the nodes acts as Master nodes and each of this has 3 main components such as
+                                           1.Node Manager
+                                           2.Application Manager
+                                           3.Data Node
+*Each of these master nodes contains one or more slave nodes.
+*These slave nodes consists of two components such as 
+                                            1.Node Manager
+                                            2.HDFS
+*Data Node is used to store actual data of big Data application. These nodes does not contain Application Master component.
+
+Resource Manager:
+   *It is per-cluster component.
+   *It consists of two components such as 
+                                             1.Scheduler- It is responsible to schedule the required resources to the applications.
+                                             2.Application Manager
+Application Master:
+   *It is per-application level component.
+   *Responsible for managing assigned Application life cycle.
+   *Interacts with both resource manager's scheduler and node manager.
+
+Node Manager:
+   *It is a per-node level component.
+   *Responsible for managing the life cycle of the container and also monitoring each conatiner's resource utilization.
+
+Container:
+   *Each of the master or slave nodes contains set of conatiners.
+   *It is a portion of memory in HDFS.
+   *It is similar to Data slots in Hadoop 1.x.
+
+
+                          
